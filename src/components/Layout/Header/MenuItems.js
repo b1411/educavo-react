@@ -24,7 +24,7 @@ const MenuItems = (props) => {
             : "menu-item-has-children"
         }
       >
-        <Link to="#">О нас</Link>
+        <Link to="/about">О нас</Link>
       </li>
       <li
         className={
