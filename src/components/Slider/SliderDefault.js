@@ -30,7 +30,7 @@ const SliderDefault = () => {
                         <div className="container">
                             <div className="content-part">
                                 <div className="sl-sub-title">Безопасность и квалификация</div>
-                                <h1 className="sl-title">Республиканский центр обучения</h1>
+                                <h1 className="sl-title">Республиканский центр обучения и сертификации</h1>
                                 <div className="sl-btn">
                                     <Link className="readon orange-btn main-home" to="/course-3">Все курсы</Link>
                                 </div>
@@ -42,7 +42,7 @@ const SliderDefault = () => {
                         <div className="container">
                             <div className="content-part">
                                 <div className="sl-sub-title">Квалификация и безопасность вместе</div>
-                                <h1 className="sl-title">Профессиональное развитие с РЦО</h1>
+                                <h1 className="sl-title">Профессиональное развитие с РЦОС</h1>
                                 <div className="sl-btn">
                                     <Link className="readon orange-btn main-home" to="/cours-3">Все курсы</Link>
                                 </div>

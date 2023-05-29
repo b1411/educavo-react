@@ -5,11 +5,11 @@ import CategoriesSingle from '../../components/Categories/CategoriesSingle';
 
 // Categories Image
 import image1 from '../../assets/img/categories/main-home/1.jpg';
-import image2 from '../../assets/img/categories/main-home/2.jpg';
-import image3 from '../../assets/img/categories/main-home/3.jpg';
-import image4 from '../../assets/img/categories/main-home/4.jpg';
-import image5 from '../../assets/img/categories/main-home/5.jpg';
-import image6 from '../../assets/img/categories/main-home/6.jpg';
+import image2 from '../../assets/img/categories/main-home/2.JPG';
+import image3 from '../../assets/img/categories/main-home/3.PNG';
+import image4 from '../../assets/img/categories/main-home/4.JPG';
+import image5 from '../../assets/img/categories/main-home/5.JPG';
+import image6 from '../../assets/img/categories/main-home/6.JPG';
 
 // Categories Icon
 import icon1 from '../../assets/img/categories/main-home/icon/1.png';

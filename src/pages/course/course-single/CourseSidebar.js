@@ -71,7 +71,7 @@ const CourseSidebar = () => {
           <ul>
             <i
               className="fa fa-check-square-o"
-              style={{ color: "#ff5421", paddingRight: "10px" }}
+              style={{ color: "#21a7d0", paddingRight: "10px" }}
             ></i>
             <span
               className="label"
