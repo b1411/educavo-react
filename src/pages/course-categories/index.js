@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/Layout/Header/Header';
 import Footer from '../../components/Layout/Footer/Footer';
 import OffWrap from '../../components/Layout/Header/OffWrap';
-import SearchModal from '../../components/Layout/Header/SearchModal';
+
 import Newsletter from '../../components/Common/Newsletter';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import CourseMain from './CourseMain';
@@ -54,7 +54,7 @@ const CourseCategoryPage = () => {
                 footerClass="rs-footer home9-style main-home"
                 footerLogo={footerLogo}
             />
-            <SearchModal />
+            
         </React.Fragment>
     );
 }

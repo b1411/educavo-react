@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import CourseSidebar from '../course/CourseSidebarSection';
 import CourseSingleTwo from '../../components/Courses/CourseSingleTwo';

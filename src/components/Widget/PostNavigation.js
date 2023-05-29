@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostNavigation = ({ }) => {
+const PostNavigation = () => {
     return (
         <div className="ps-navigation">
             <ul>

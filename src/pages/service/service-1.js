@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Layout/Footer';
-import SearchModal from '../../components/Layout/Header/SearchModal';
+
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import ScrollToTop from '../../components/Common/ScrollTop';
 import ServiceOneMain from '../../components/ServiceOne/ServiceOneMain';
@@ -36,7 +36,7 @@ const ServiceOne = () => {
                 {/* scrolltop-end */}
             </div>
             <Footer />
-            <SearchModal />
+            
         </React.Fragment>
 
     );

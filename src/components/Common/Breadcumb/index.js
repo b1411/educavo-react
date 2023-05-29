@@ -9,14 +9,14 @@ const SiteBreadcrumb = (props) => {
 			<div className="breadcrumbs-img">
 				<img 
 					src={breadcrumbsImg} 
-					alt="Breadcrumbs Image" 
+					alt="Breadcrumbs" 
 				/>
 			</div>
 			<div className={innerClass ? innerClass : 'breadcrumbs-text white-color'}>
-				<h1 className={titleClass ? titleClass : 'page-title'}>{pageTitle ? pageTitle : 'Breadcrumbs'}</h1>
+				<h1 className={titleClass ? titleClass : 'page-title'}>{pageTitle}</h1>
 				<ul>
 					<li>
-						<Link to="/" className="active">{parentCategory ? parentCategory : 'Home'}</Link>
+						<Link to="/" className="active">{parentCategory ? parentCategory : 'Домой'}</Link>
 					</li>
 					{pageCategory ? 
 						<>

@@ -43,11 +43,11 @@ const AboutCounter = () => {
                             <SectionTitle
                                 sectionClass="sec-title"
                                 subtitleClass="sub-title orange"
-                                subtitle="About Us"
+                                subtitle="О нас"
                                 titleClass="title mb-20"
-                                title="The End Result of All True Learning"
+                                title="Мы предлагаем лучшие курсы"
                                 descClass="desc big"
-                                description="The key to success is to appreciate how people learn, understand the thought process that goes into instructional design, what works well, and a range of differen"
+                                description="Мы предлагаем лучшие курсы для развития ваших навыков. Вы можете выбрать любой курс, который вам нравится."
                             />
                         </div>
                     </div>

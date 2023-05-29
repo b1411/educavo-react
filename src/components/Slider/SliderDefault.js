@@ -29,10 +29,10 @@ const SliderDefault = () => {
                     <div className="slider-content slide1">
                         <div className="container">
                             <div className="content-part">
-                                <div className="sl-sub-title">Start to learning today</div>
-                                <h1 className="sl-title">Online Courses From Leading Experts</h1>
+                                <div className="sl-sub-title">Безопасность и квалификация</div>
+                                <h1 className="sl-title">Республиканский центр обучения</h1>
                                 <div className="sl-btn">
-                                    <Link className="readon orange-btn main-home" to="/course">Find Course</Link>
+                                    <Link className="readon orange-btn main-home" to="/course-3">Все курсы</Link>
                                 </div>
                             </div>
                         </div>
@@ -41,10 +41,10 @@ const SliderDefault = () => {
                     <div className="slider-content slide2">
                         <div className="container">
                             <div className="content-part">
-                                <div className="sl-sub-title">Start to learning today</div>
-                                <h1 className="sl-title">Explore Interests and Career With Courses</h1>
+                                <div className="sl-sub-title">Квалификация и безопасность вместе</div>
+                                <h1 className="sl-title">Профессиональное развитие с РЦО</h1>
                                 <div className="sl-btn">
-                                    <Link className="readon orange-btn main-home" to="/course">Find Course</Link>
+                                    <Link className="readon orange-btn main-home" to="/cours-3">Все курсы</Link>
                                 </div>
                             </div>
                         </div>

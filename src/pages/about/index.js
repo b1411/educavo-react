@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../components/Layout/Header/Header';
 import Footer from '../../components/Layout/Footer/Footer';
 import OffWrap from '../../components/Layout/Header/OffWrap';
-import SearchModal from '../../components/Layout/Header/SearchModal';
 import Newsletter from '../../components/Common/Newsletter';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import AboutMain from './AboutMain';
@@ -34,8 +33,8 @@ const About = () => {
 
             {/* breadcrumb-area-start */}
             <SiteBreadcrumb
-                pageTitle="About"
-                pageName="About"
+                pageTitle="О нас"
+                pageName="О нас"
                 breadcrumbsImg={bannerbg}
             />
             {/* breadcrumb-area-start */}
@@ -53,7 +52,6 @@ const About = () => {
                 footerClass="rs-footer home9-style main-home"
                 footerLogo={footerLogo}
             />
-            <SearchModal />
         </React.Fragment>
     );
 }

@@ -27,16 +27,16 @@ const Categories = () => {
                 <SectionTitle
                     sectionClass="sec-title3 text-center mb-44"
                     subtitleClass="sub-title"
-                    subtitle="Top Categories"
+                    subtitle="Наши курсы"
                     titleClass="title black-color"
-                    title="Popular Online Categories"
+                    title="Курсы для развития"
                 />
                 <div className="row mb-34">
                     <div className="col-lg-4 col-md-6 mb-30">
                         <CategoriesSingle
                             itemClass="categories-items"
                             image={image1}
-                            title="General Education"
+                            title="Пожарно-технический минимум"
                             quantity="02 Courses"
                             iconImg={icon1}
                         />
@@ -45,7 +45,7 @@ const Categories = () => {
                         <CategoriesSingle
                             itemClass="categories-items"
                             image={image2}
-                            title="Computer Science"
+                            title="Безопасность и охрана труда"
                             quantity="04 Courses"
                             iconImg={icon2}
                         />
@@ -54,7 +54,7 @@ const Categories = () => {
                         <CategoriesSingle
                             itemClass="categories-items"
                             image={image3}
-                            title="Civil Engineering"
+                            title="Санитарно - эпидемиологический защишенность"
                             quantity="08 Courses"
                             iconImg={icon3}
                         />
@@ -63,7 +63,7 @@ const Categories = () => {
                         <CategoriesSingle
                             itemClass="categories-items"
                             image={image4}
-                            title="Artificial Intelligence"
+                            title="Антитеррор"
                             quantity="03 Courses"
                             iconImg={icon4}
                         />
@@ -72,7 +72,7 @@ const Categories = () => {
                         <CategoriesSingle
                             itemClass="categories-items"
                             image={image5}
-                            title="Business Studies"
+                            title="Парамедика"
                             quantity="12 Courses"
                             iconImg={icon5}
                         />
@@ -81,14 +81,14 @@ const Categories = () => {
                         <CategoriesSingle
                             itemClass="categories-items"
                             image={image6}
-                            title="Computer Engineering"
+                            title="Согласительная комиссия"
                             quantity="05 Courses"
                             iconImg={icon6}
                         />
                     </div>
                 </div>
                 <div className="text-center">
-                    <Link className="readon orange-btn main-home" to="/course-categories">View All categories </Link>
+                    <Link className="readon orange-btn main-home" to="/course-3">Курсы</Link>
                 </div>
             </div>
         </div>

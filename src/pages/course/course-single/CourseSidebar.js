@@ -1,64 +1,137 @@
-import React, { useState } from 'react';
-import ModalVideo from 'react-modal-video';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import courseData from "./data/courseData";
+import { useRootContext } from "../../../components/Context/context";
+import { Modal } from "react-bootstrap";
+import Parse from "parse";
 
-// Image
-import videoImg from '../../../assets/img/about/about-video-bg2.png';
+const emDash = String.fromCharCode(8212);
 
 const CourseSidebar = () => {
+  let courseId = useRootContext().courseId;
+  let accessSet = useRootContext().setAccess;
+  const [showModal, setShowModal] = useState(false);
 
-    const [isOpen, setIsOpen] = useState(false);
-    const openModal = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    let user = Parse.User.current();
+    if (user !== null) {
+      if (+user.get("courseId") === +courseId) {
+        accessSet(true);
+      } else {
+        accessSet(false);
+      }
+    } else {
+      accessSet(false);
+    }
+  }, [courseId, accessSet]);
 
-    return (
-        <div className="inner-column">
-            <ModalVideo channel='youtube' isOpen={isOpen} videoId='YLN1Argi7ik' onClose={() => { openModal(); }} />
-            <div className="intro-video media-icon orange-color2">
-                <img className="video-img" src={videoImg} alt="Video Image" />
-                <Link className="popup-videos" onClick={() => { openModal(); }} >
-                    <i className="fa fa-play"></i>
-                </Link>
-                <h4>Preview this course</h4>
+  async function handleEnter(e) {
+    e.preventDefault();
+    e.persist();
+    let passCodes = new Parse.Query("PassCodes");
+    let passCodeInput = e.target[2].value;
+    let isContains = false;
+    let passCode = await passCodes.find();
+    for (let i = 0; i < passCode.length; i++) {
+      if (
+        passCode[i].get("code") == passCodeInput &&
+        passCode[i].get("courseId") == courseId
+      ) {
+        isContains = true;
+        break;
+      }
+    }
+
+    if (isContains) {
+      alert("Вы успешно получили доступ к курсу!");
+      let user = await Parse.User.signUp(e.target[1].value, "samplepass");
+      user.set("courseId", courseId);
+      user.set("email", e.target[1].value);
+      await user.save();
+      accessSet(true);
+      setShowModal(false);
+    } else {
+      alert("Неверный код активации курса!");
+    }
+  }
+
+  return (
+    <>
+      <style>
+        {`
+      .dash-span::selection {
+        background: transparent;
+      }
+      .dash-span::-moz-selection {
+        background: transparent;
+      }
+    `}
+      </style>
+      <div className="inner-column">
+        <div className="course-features-info">
+          <ul>
+            <i
+              className="fa fa-check-square-o"
+              style={{ color: "#ff5421", paddingRight: "10px" }}
+            ></i>
+            <span
+              className="label"
+              style={{
+                fontWeight: "600",
+              }}
+            >
+              Цели:
+            </span>
+            <div className="value">
+              {courseData[courseId].goals.map((item, index) => {
+                return (
+                  <p key={index}>
+                    <span className="dash-span">{emDash}</span> {item}
+                  </p>
+                );
+              })}
             </div>
-            <div className="course-features-info">
-                <ul>
-                    <li className="lectures-feature">
-                        <i className="fa fa-files-o"></i>
-                        <span className="label">Lectures</span>
-                        <span className="value">3</span>
-                    </li>
-                    
-                    <li className="quizzes-feature">
-                        <i className="fa fa-puzzle-piece"></i>
-                        <span className="label">Quizzes</span>
-                        <span className="value">0</span>
-                    </li>
-                    
-                    <li className="duration-feature">
-                        <i className="fa fa-clock-o"></i>
-                        <span className="label">Duration</span>
-                        <span className="value">10 week </span>
-                    </li>
-                    
-                    <li className="students-feature">
-                        <i className="fa fa-users"></i>
-                        <span className="label">Students</span>
-                        <span className="value">21</span>
-                    </li>
-                    
-                    <li className="assessments-feature">
-                        <i className="fa fa-check-square-o"></i>
-                        <span className="label">Assessments</span>
-                        <span className="value">Yes</span>
-                    </li>
-                </ul>
-            </div>                
-            <div className="btn-part">
-                <a href="#" className="btn readon2 orange">$35</a>
-                <a href="#" className="btn readon2 orange-transparent">Buy Now</a>
-            </div>
+          </ul>
         </div>
-    );
-}
+        <div>
+          <button
+            className="readon orange-btn"
+            onClick={() => {
+              setShowModal(true);
+            }}
+            style={{
+              margin: "20px auto 0",
+              width: "100%",
+            }}
+          >
+            Пройти обучение
+          </button>
+        </div>
+      </div>
+      <Modal
+        show={showModal}
+        onHide={() => {}}
+        size="lg"
+        aria-labelledby="courseEnterFormLabel"
+        centered
+        className="modal"
+      >
+        <Modal.Body>
+          <i
+            className="fa fa-times close-icon"
+            onClick={() => setShowModal(false)}
+          ></i>
+          <form className="modal-form" onSubmit={(e) => handleEnter(e)}>
+            <input type="text" placeholder="Введите ФИО" required />
+            <input type="email" placeholder="Введите ваш email" required />
+            <input type="text" placeholder="код активации курса" required />
+            <button type="submit" className="readon orange-btn">
+              Пройти курс
+            </button>
+          </form>
+        </Modal.Body>
+      </Modal>
+    </>
+  );
+};
 
 export default CourseSidebar;

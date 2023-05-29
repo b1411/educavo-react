@@ -22,6 +22,7 @@ const OnepageContactPart = (props) => {
                                 subtitle="Get In Touch"
                                 titleClass={contactSectionTitleClass ? contactSectionTitleClass : 'title testi-title'}
                                 title="Fill The Form Below"
+                                id="contact"
                             />
 
                             {/* Contact Form */}
@@ -35,7 +36,7 @@ const OnepageContactPart = (props) => {
             </div>
 
             <div className="map-canvas pt-120 md-pt-80">
-                <iframe src="https://maps.google.com/maps?q=rstheme&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                <iframe src="https://maps.google.com/maps?q=rstheme&t=&z=13&ie=UTF8&iwloc=&output=embed" title='gmap'></iframe>
             </div>
         </div>
     );

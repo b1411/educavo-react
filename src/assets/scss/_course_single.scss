@@ -54,7 +54,6 @@
             }
         }
         .course-features-info {
-            margin: 50px 0;
             border-radius: 3px;
             padding: 30px 40px 30px;
             position: relative;
@@ -68,7 +67,7 @@
                         color: $orangeColor;
                     }
                     .label {
-                        padding-left: 10px;
+                        padding-left: 20px;
                     }
                     .value {
                         float: right;
@@ -326,5 +325,42 @@
 @media #{$mobile} {
     .intro-section .intro-tabs .react-tabs__tab {
         width: 100%;
+    }
+}
+
+.modal-content {
+    width: min(250px, 100%);
+    margin: 0 auto;
+    .modal-body {
+        .close-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            input {
+                margin-bottom: 20px;
+                width: min(250px, 100%);
+                outline: none;
+                border: 1px solid #ccc;
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-size: 16px;
+                color: #333;
+                &::placeholder {
+                    color: #999;
+                }
+            }
+            button {
+                width: min(250px, 100%);
+            }
+        }
     }
 }

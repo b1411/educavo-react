@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/Layout/Header/Header';
 import Footer from '../../components/Layout/Footer/Footer';
 import OffWrap from '../../components/Layout/Header/OffWrap';
-import SearchModal from '../../components/Layout/Header/SearchModal';
+
 import Newsletter from '../../components/Common/Newsletter';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import CourseMain from './CourseMain';
@@ -28,8 +28,6 @@ const CourseOne = () => {
                 headerClass="full-width-header header-style1 home8-style4"
                 TopBar='enable'
                 TopBarClass="topbar-area home8-topbar"
-                emailAddress='support@website.com'
-                Location='374 William S Canning Blvd, MA 2721, USA '
             />
 
             {/* breadcrumb-area-start */}
@@ -54,7 +52,7 @@ const CourseOne = () => {
                 footerClass="rs-footer home9-style main-home"
                 footerLogo={footerLogo}
             />
-            <SearchModal />
+            
         </React.Fragment>
     );
 }

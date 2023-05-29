@@ -36,9 +36,9 @@ const Testimonial = () => {
                     <SectionTitle
                         sectionClass="sec-title3 mb-50 md-mb-30 text-center"
                         subtitleClass="sub-title primary"
-                        subtitle="Testimonial"
+                        subtitle="Отзывы"
                         titleClass="title white-color"
-                        title="What Students Saying"
+                        title="Что о нас говорят?"
                         effectClass="heading-line"
                     />
                     <Slider {...testimonialSettings}>

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import SliderDefault from '../../components/Slider/SliderDefault';
 import Categories from './CategoriesSection';
-import Courses from './CoursesSection';
 import Cta from './CtaSection';
-import FaqSection from './FaqSection';
 import Testimonial from './TestimonialSection';
-import Blog from './BlogSection';
 import ScrollToTop from '../../components/Common/ScrollTop';
 
 class HomeMain extends Component {
@@ -23,7 +20,7 @@ class HomeMain extends Component {
 				{/* Categories-area-end */}
 
 				{/* Courses-area-start */}
-				<Courses />
+				{/* <Courses /> */}
 				{/* Courses-area-end */}
 
 				{/* Cta-area-start */}
@@ -31,7 +28,7 @@ class HomeMain extends Component {
 				{/* Cta-area-end */}
 
 				{/* FaqSection-area-start */}
-				<FaqSection />
+				{/* <FaqSection /> */}
 				{/* FaqSection-area-end */}
 
 				{/* testmonial-area-start */}
@@ -39,7 +36,7 @@ class HomeMain extends Component {
 				{/* testmonial-area-end */}
 
 				{/* blog-area-start */}
-				<Blog />
+				{/* <Blog /> */}
 				{/* blog-area-end */}
 
 				{/* scrolltop-start */}

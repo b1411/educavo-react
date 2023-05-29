@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import postImage from '../../assets/img/blog/inner/1.jpg';
 import innerImage from '../../assets/img/blog/inner/2.jpg';
 
-const PostContent = ({ }) => {
+const PostContent = () => {
     return (
         <div className="blog-deatails">
             <div className="bs-img">
                 <img
                     src={postImage}
-                    alt="Post Image"
+                    alt="Post"
                 />
             </div>
             <div className="blog-full">

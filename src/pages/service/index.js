@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Layout/Footer';
-import SearchModal from '../../components/Layout/Header/SearchModal';
+
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import ServiceOneMain from '../../components/ServiceOne/ServiceOneMain';
 
@@ -32,7 +32,7 @@ const Services = () => {
                 {/* ServiceOneMain */}
             </div>
             <Footer />
-            <SearchModal />
+            
         </React.Fragment>
 
     );

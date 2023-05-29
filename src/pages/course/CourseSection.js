@@ -11,8 +11,6 @@ import courseImg3 from '../../assets/img/courses/3.jpg';
 import courseImg4 from '../../assets/img/courses/4.jpg';
 import courseImg5 from '../../assets/img/courses/5.jpg';
 import courseImg6 from '../../assets/img/courses/6.jpg';
-import courseImg7 from '../../assets/img/courses/7.jpg';
-import courseImg8 from '../../assets/img/courses/8.jpg';
 
 const CoursePart = (props) => {
 

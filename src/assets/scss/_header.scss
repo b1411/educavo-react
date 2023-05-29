@@ -1018,6 +1018,10 @@
             position: relative;
             top: 3px;
             transition: $transition;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
             span {
                 height: 2px;
                 width: 30px;

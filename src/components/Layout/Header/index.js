@@ -8,9 +8,6 @@ import TopHeader from './TopBar';
 import normalLogo from '../../../assets/img/logo/lite-logo.png';
 import darkLogo from '../../../assets/img/logo/dark-logo.png';
 
-import productImg1 from '../../../assets/img/shop/1.jpg';
-import productImg2 from '../../../assets/img/shop/2.jpg';
-
 const Header = (props) => {
 	const { headerClass, parentMenu, secondParentMenu, activeMenu, headerNormalLogo, headerStickyLogo, mobileNormalLogo, TopBar, TopBarClass, CanvasLogo, CanvasClass } = props;
 	const [menuOpen, setMenuOpen] = useState(false)
@@ -31,9 +28,6 @@ const Header = (props) => {
 		return () => window.removeEventListener("scroll", toggleVisibility);
 	}, []);
 
-	const searchModalAdd = () => {
-		document.body.classList.add('modal-open');
-	};
 
 	const canvasMenuAdd = () => {
 		document.body.classList.add('nav-expanded');
@@ -86,58 +80,9 @@ const Header = (props) => {
 									<div className="expand-btn-inner search-icon">
 										<ul className="expand-items">
 											<li className="sidebarmenu-search">
-												<Link to="#" onClick={searchModalAdd} className="rs-search" href="#">
-													<i className="fa fa-search"></i>
-												</Link>
-											</li>
-											<li className="user-icon cart-inner no-border mini-cart-active">
-												<Link to="#"><i className="fa fa-shopping-bag"></i></Link>
-												<div className="woocommerce-mini-cart text-left">
-													<div className="cart-bottom-part">
-														<ul className="cart-icon-product-list">
-															<li className="display-flex">
-																<div className="icon-cart">
-																	<Link to="#"><i className="fa fa-times"></i></Link>
-																</div>
-																<div className="product-info">
-																	<Link to="/shop/cart">Law Book</Link><br />
-																	<span className="quantity">1 × $30.00</span>
-																</div>
-																<div className="product-image">
-																	<Link to="/shop/cart"><img src={productImg1} alt="Product Image" /></Link>
-																</div>
-															</li>
-															<li className="display-flex">
-																<div className="icon-cart">
-																	<Link to="#"><i className="fa fa-times"></i></Link>
-																</div>
-																<div className="product-info">
-																	<Link to="/shop/cart">Spirit Level</Link><br />
-																	<span className="quantity">1 × $30.00</span>
-																</div>
-																<div className="product-image">
-																	<Link to="/shop/cart"><img src={productImg2} alt="Product Image" /></Link>
-																</div>
-															</li>
-														</ul>
-
-														<div className="total-price text-center">
-															<span className="subtotal">Subtotal:</span>
-															<span className="current-price">$85.00</span>
-														</div>
-
-														<div className="cart-btn text-center">
-															<Link className="crt-btn btn1" to="/shop/cart">View Cart</Link>
-															<Link className="crt-btn btn2" to="/shop/checkout">Check Out</Link>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li className="user-icon last-icon hidden-lg">
-												<Link to="/shop/my-account"><i className="fa fa-user" aria-hidden="true"></i></Link>
 											</li>
 											<li>
-												<a href="#" onClick={canvasMenuAdd} id="nav-expander" className="nav-expander">
+												<a href='#' onClick={canvasMenuAdd} id="nav-expander" className="nav-expander">
 													<span className="dot1"></span>
 													<span className="dot2"></span>
 													<span className="dot3"></span>

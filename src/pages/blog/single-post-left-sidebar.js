@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
 import BlogDetails from './BlogDetails';
 import SinglePostSidebar from './SinglePostSidebar';
 import Header from '../../components/Layout/Header/Header';
@@ -8,10 +8,10 @@ import Newsletter from '../../components/Common/Newsletter';
 import ScrollToTop from '../../components/Common/ScrollTop';
 import OffWrap from '../../components/Layout/Header/OffWrap';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
-import SearchModal from '../../components/Layout/Header/SearchModal';
+
 
 // Image
-import favIcon from '../../assets/img/fav-orange.png';
+
 import Logo from '../../assets/img/logo/dark-logo.png';
 import footerLogo from '../../assets/img/logo/lite-logo.png';
 
@@ -22,9 +22,7 @@ const SinglePostLeftSidebar = () => {
 
     return (
         <React.Fragment>
-            <Helmet>
-                <link rel="icon" href={favIcon} />
-            </Helmet>
+
             <OffWrap />
             <Header
                 parentMenu='blog'
@@ -80,7 +78,7 @@ const SinglePostLeftSidebar = () => {
             />
             {/* scrolltop-end */}
 
-            <SearchModal />
+            
         </React.Fragment>
     );
 }
