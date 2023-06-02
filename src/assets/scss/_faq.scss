@@ -21,7 +21,7 @@
                     padding: 0 !important;
                     border: none;
                     .card-link{
-                        font-size: 17px;
+                        font-size: 10px;
                         font-weight: 600;
                         line-height: 28px;
                         color: $whiteColor;
@@ -29,6 +29,7 @@
                         padding: 15px 15px;
                         text-transform: capitalize;
                         background: $primaryColor;
+                        height: fit-content;
                         &.collapsed {
                             background: #f9f8ff;
                             color: $bodyColor;
@@ -77,9 +78,8 @@
                                 position: relative;
                                 display: block;
                                 width: 100%;
-                                padding: 0 60px;
-                                height: 65px;
-                                line-height: 65px;
+                                padding: 20px 60px;
+                                height: fit-content;
                                 font-size: 16px;
                                 font-weight: 600;
                                 background: $whiteColor;
