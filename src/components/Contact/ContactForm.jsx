@@ -11,6 +11,7 @@ const ContactForm = (props) => {
 
   const sendForm = (e) => {
     e.preventDefault();
+    e.persist();
     if (failedAttempts > 3) {
       alert("Превышено количество попыток отправки заявки!");
       return;

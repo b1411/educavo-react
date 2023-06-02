@@ -26,7 +26,7 @@ const ContactMain = () => {
                 boxClass="sm-mb-30"
                 title="Адрес"
                 iconClass="flaticon-location"
-                address="Жумалиева, 86, Алматы, Казахстан"
+                address="г. Алматы, улица Жумалиева, 86, БЦ Grand Asia, блок Б"
               />
             </div>
             <div className="col-md-4">
@@ -34,7 +34,7 @@ const ContactMain = () => {
                 boxClass="sm-mb-30"
                 title="Электронная почта"
                 iconClass="flaticon-email"
-                email="contact@educavo.com"
+                email="info@rcos.kz"
               />
             </div>
             <div className="col-md-4">
@@ -42,7 +42,11 @@ const ContactMain = () => {
                 boxClass=""
                 title="Номер телефона"
                 iconClass="flaticon-phone"
-                phone="(+01)999-999-4444"
+                phone={[
+                  "+7 701 353 36 66",
+                  "+7 700 350 83 13",
+                  "+7 705 553 30 60",
+                ]}
               />
             </div>
           </div>

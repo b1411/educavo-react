@@ -3,11 +3,11 @@ import CourseSingleFour from '../../components/Courses/CourseSingleFour';
 
 // Courses Image
 import image1 from '../../assets/img/courses/1.jpg';
-import image2 from '../../assets/img/courses/2.JPG';
+import image2 from '../../assets/img/courses/2.jpg';
 import image3 from '../../assets/img/courses/3.PNG';
-import image4 from '../../assets/img/courses/4.JPG';
-import image5 from '../../assets/img/courses/5.JPG';
-import image6 from '../../assets/img/courses/6.JPG';
+import image4 from '../../assets/img/courses/4.jpg';
+import image5 from '../../assets/img/courses/5.jpg';
+import image6 from '../../assets/img/courses/6.jpg';
 
 const Courses = () => {
 

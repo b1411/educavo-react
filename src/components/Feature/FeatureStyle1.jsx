@@ -14,24 +14,24 @@ const FeatureStyle1 = (props) => {
                         <FeatureSingle
                             itemClass="features-wrap"
                             itemImg={image1}
-                            itemTitle="5,320 online courses"
-                            itemDesc="Enjoy a variety of fresh topics"
+                            itemTitle="Гибкость и удобство"
+                            itemDesc=""
                         />
                     </div>
                     <div className="col-lg-4 col-md-12 md-mb-30">
                         <FeatureSingle
                             itemClass="features-wrap"
                             itemImg={image2}
-                            itemTitle="Expert instruction"
-                            itemDesc="Find the right instructor"
+                            itemTitle="Множество курсов"
+                            itemDesc=""
                         />
                     </div>
                     <div className="col-lg-4 col-md-12">
                         <FeatureSingle
                             itemClass="features-wrap"
                             itemImg={image3}
-                            itemTitle="Lifetime access"
-                            itemDesc="Learn on your schedule"
+                            itemTitle="Онлайн сертификация"
+                            itemDesc=""
                         />
                     </div>
                 </div>

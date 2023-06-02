@@ -41,16 +41,31 @@ const CourseSidebar = () => {
       }
     }
 
-    if (isContains) {
-      alert("Вы успешно получили доступ к курсу!");
-      let user = await Parse.User.signUp(e.target[1].value, "samplepass");
-      user.set("courseId", courseId);
-      user.set("email", e.target[1].value);
-      await user.save();
-      accessSet(true);
-      setShowModal(false);
-    } else {
-      alert("Неверный код активации курса!");
+    try {
+      if (isContains) {
+        alert("Вы успешно получили доступ к курсу!");
+        let user = await Parse.User.signUp(e.target[1].value, "samplepass");
+        user.set("courseId", courseId);
+        user.set("email", e.target[1].value);
+        await user.save();
+        accessSet(true);
+        setShowModal(false);
+      } else {
+        alert("Неверный код активации курса!");
+      }
+    } catch (error) {
+      if (error.code === 202) {
+        try {
+          let user = await Parse.User.logIn(e.target[1].value, "samplepass");
+          user.set("courseId", courseId);
+          user.set("email", e.target[1].value);
+          await user.save();
+          accessSet(true);
+          setShowModal(false);
+        } catch (error) {
+          alert("Неверный код активации курса!");
+        }
+      }
     }
   }
 

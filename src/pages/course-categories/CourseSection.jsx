@@ -6,8 +6,10 @@ import CourseSingleTwo from '../../components/Courses/CourseSingleTwo';
 // Course courseImg
 import courseImg1 from '../../assets/img/courses/1.jpg';
 import courseImg2 from '../../assets/img/courses/2.jpg';
-import courseImg3 from '../../assets/img/courses/3.jpg';
+import courseImg3 from '../../assets/img/courses/3.PNG';
 import courseImg4 from '../../assets/img/courses/4.jpg';
+import courseImg5 from '../../assets/img/courses/5.jpg';
+import courseImg6 from '../../assets/img/courses/6.jpg';
 
 const CoursePart = (props) => {
 

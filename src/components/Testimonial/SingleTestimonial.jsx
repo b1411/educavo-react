@@ -12,12 +12,12 @@ const SingleTestimonial = (props) => {
                     />
                     {props.Description}
                 </div>
-                <div className="author-img">
+                {/* <div className="author-img">
                     <img
                         src={props.authorImage}
                         alt={props.Title}
                     />
-                </div>
+                </div> */}
             </div>
             <div className="author-part">
                 <Link to='#' className="name">{props.Title}</Link>
