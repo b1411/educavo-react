@@ -1,0 +1,14 @@
+.row {
+
+    .thank-you-letter-item {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 40%;
+            height: auto;
+        }
+    }
+}

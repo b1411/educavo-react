@@ -18,7 +18,7 @@ const Cta = () => {
                                 description="Мы - ведущий провайдер образовательных решений в области повышения квалификации. Наша компания предлагает широкий спектр курсов и обучающих программ, которые помогут организациям улучшить навыки и знания своих сотрудников"
                             />
                             <div className="btn-part">
-                                <Link className="readon orange-btn transparent" to="/register">Зарегестрироваться</Link>
+                                <Link className="readon orange-btn transparent" to="/contact">Зарегестрироваться</Link>
                             </div>
                         </div>
                     </div>

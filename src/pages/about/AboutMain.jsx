@@ -4,6 +4,7 @@ import AboutVideo from "./VideoSection";
 import AboutCounter from "./CounterSection";
 import Testimonial from "./TestimonialSection";
 import ScrollToTop from "../../components/Common/ScrollTop";
+import ThankYouLetterSection from "../../components/ThankYouLetter/ThankYouLetterSection";
 
 const AboutMain = () => {
   return (
@@ -17,6 +18,9 @@ const AboutMain = () => {
       {/* Team Section Start */}
       {/* <Team /> */}
       {/* Team Section End */}
+
+      <ThankYouLetterSection />
+
       {/* Testimonial Section Start */}
       <Testimonial />
       {/* Testimonial Section End */}

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ModalVideo from "react-modal-video";
+import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -11,8 +10,6 @@ import {
 import image from "../../assets/img/faq/2.jpeg"
 
 const FaqSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = () => setIsOpen(!isOpen);
 
   return (
     <div className="rs-faq-part style1 orange-style pt-100 pb-100 md-pt-70 md-pb-70">
@@ -84,7 +81,7 @@ const FaqSection = () => {
             </div>
           </div>
           <div className="col-lg-6 padding-0">
-            <img src={image}></img>
+            <img src={image} alt="notebook"></img>
           </div>
         </div>
       </div>

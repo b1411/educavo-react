@@ -56,9 +56,9 @@ const Header = (props) => {
           {TopBar ? (
             <TopHeader
               topBarClass={TopBarClass}
-              emailAddress="+7 707 777 77 77"
+              emailAddress="+7 701 353 36 66"
               phoneNumber={phoneNumber}
-              Location="Жумалиева, 86, Алматы, Казахстан"
+              Location="г. Алматы, улица Жумалиева, 86, БЦ Grand Asia, блок Б"
             />
           ) : (
             ""
@@ -134,7 +134,8 @@ const Header = (props) => {
                   <div className="expand-btn-inner search-icon">
                     <ul className="expand-items">
                       <li>
-                        <button className="nav-expander"
+                        <button
+                          className="nav-expander"
                           onClick={canvasMenuAdd}
                           id="nav-expander"
                         >

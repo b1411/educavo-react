@@ -45,6 +45,7 @@
                 i {
                     position: absolute;
                     color: $whiteColor;
+                    
                     &:before {
                         color: $whiteColor;
                     }
@@ -52,6 +53,7 @@
                 .desc {
                     padding-left: 35px;
                     color: $whiteColor;
+                    margin-left: 15px;
                     a {
                         display: block;
                         color: $whiteColor;

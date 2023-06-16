@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const CategoriesSingle = (props) => {
-    const { itemClass, title, image, iconImg, quantity, btnText, catLink } = props;
+    const { itemClass, title, image, iconImg, btnText, catLink } = props;
     return (
         <div className={itemClass}>
             <div className="cate-images">

@@ -8,7 +8,7 @@ const FooterBottom = () => {
                 <div className="row y-middle">
                     <div className="col-lg-6 md-mb-10">
                         <div className="copyright md-mb-0">
-                            <p>© 2022 All Rights Reserved. Designed By <a href="https://rstheme.com/" target="_blank">RSTheme</a></p>
+                            <p>© 2021 <Link to="/" as="/">ООО "Центр профессионального обучения"</Link> Все права защищены.</p>
                         </div>
                     </div>
                     <div className="col-lg-6 text-end md-text-left">

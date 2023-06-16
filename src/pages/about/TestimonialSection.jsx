@@ -8,8 +8,6 @@ import SingleTestimonialThree from '../../components/Testimonial/SingleTestimoni
 import author1 from '../../assets/img/testimonial/style3/1.png';
 import author2 from '../../assets/img/testimonial/style3/2.png';
 import author3 from '../../assets/img/testimonial/style3/3.png';
-import author4 from '../../assets/img/testimonial/style3/4.png';
-import author5 from '../../assets/img/testimonial/style3/5.png';
 
 const Testimonial = () => {
 
@@ -47,37 +45,24 @@ const Testimonial = () => {
                             <SingleTestimonialThree
                                 itemClass="testi-item"
                                 authorImage={author1}
-                                Title="David Warner"
-                                Designation="Web Developer"
-                                Description="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway."
+                                Title="Бондаренко Андрей Сергеевич"
+                                Description="Выражаем благодарность коллективу РЦОС за высокий уровень проведения работ по охране труда в нашей компании.
+                                Все договорные обязательства были выполнены в оговоренные строки, в полном обьеме и на профессиональном уровне. желаем Вашим сотрудникам успехов, а Вашему центру дальнейшего процветания."
                             />
                             <SingleTestimonialThree
                                 itemClass="testi-item"
                                 authorImage={author2}
-                                Title="Mitchel Starc"
-                                Designation="App Developer"
-                                Description="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway."
+                                Title="Баринова Елена Владимировна"
+                                Description="
+                                Организация обучения на высоком уровне. Доступный и качественный материал. Удобно  
+                                пользоваться при дистанционном обучении."
                             />
                             <SingleTestimonialThree
                                 itemClass="testi-item"
                                 authorImage={author3}
-                                Title="Steve Smith"
-                                Designation="Web Designer"
-                                Description="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway."
-                            />
-                            <SingleTestimonialThree
-                                itemClass="testi-item"
-                                authorImage={author4}
-                                Title="Bret Lee"
-                                Designation="Client Manager"
-                                Description="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway."
-                            />
-                            <SingleTestimonialThree
-                                itemClass="testi-item"
-                                authorImage={author5}
-                                Title="Shan Warne"
-                                Designation="Digital Marketar"
-                                Description="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway."
+                                Title="Кадыркожаев Досжан Сартбаевич"
+                                Description="Оқыту тақырыбы бойынша берілген материалдарының, презентациялардың, заңнамалық құжаттамалардың және стандартты құжаттардың жинақтары үшін рахмет! ‘Республикалық білітілікті арттыру және сертификациялау’ орталығының барлық мамандарына зор денсаулық, алдағы уақытта кәсіби табыс, сәттілік тілеймін!
+                                "
                             />
                         </Slider>
                     </div>

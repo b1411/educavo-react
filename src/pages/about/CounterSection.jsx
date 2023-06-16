@@ -15,19 +15,19 @@ const AboutCounter = () => {
     const counters = [
         {
             countNum: 2,
-            countTitle: 'Students',
+            countTitle: 'Студентов',
             counterPrefix: 'k+',
             countIcon: countIcon1
         },
         {
-            countNum: 50,
-            countTitle: 'Average CGPA',
-            counterPrefix: '',
+            countNum: 2,
+            countTitle: 'Предоставленных сертификатов',
+            counterPrefix: 'k+',
             countIcon: countIcon2
         },
         {
             countNum: 95,
-            countTitle: 'Graduates',
+            countTitle: 'Довольных клиентов',
             counterPrefix: '%',
             countIcon: countIcon3
         }
@@ -75,7 +75,7 @@ const AboutCounter = () => {
                                     <div key={num} className="col-md-4 sm-mb-30">
                                         <div className="counter-item two">
                                             <img className="count-img" src={counter.countIcon} alt="" />
-                                            <h2 className="number rs-count">3.
+                                            <h2 className="number rs-count">
                                                 <CountUp start={state ? 0 : counter.countNum} end={counter.countNum} duration={10} onEnd={() => setState(false)} />
                                                 {({ countUpRef, start }) => (
                                                     <VisibilitySensor onChange={start} delayedCall>

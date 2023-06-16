@@ -1,7 +1,7 @@
 
 
 const SingleTestimonialThree = (props) => {
-    const { itemClass, authorImage, Title, Designation, Description } = props;
+    const { itemClass, authorImage, Title, Description } = props;
     return (
 
         <div className={itemClass ? itemClass : 'testi-item'}>
@@ -13,14 +13,13 @@ const SingleTestimonialThree = (props) => {
                             alt={Title}
                         />
                         <h4 className="name">{Title ? Title : 'Saiko Najran'}</h4>
-                        <span className="designation">{Designation ? Designation : 'Student'}</span>
-                        <ul className="ratings">
+                        {/* <ul className="ratings">
                             <li><i className="fa fa-star"></i></li>
                             <li><i className="fa fa-star"></i></li>
                             <li><i className="fa fa-star"></i></li>
                             <li><i className="fa fa-star"></i></li>
                             <li><i className="fa fa-star"></i></li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                 <div className="col-lg-8">

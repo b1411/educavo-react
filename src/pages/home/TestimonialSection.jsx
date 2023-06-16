@@ -5,7 +5,6 @@ import SingleTestimonial from '../../components/Testimonial/SingleTestimonial';
 
 
 import quote from '../../assets/img/testimonial/main-home/test-2.png';
-import author1 from '../../assets/img/testimonial/style5/1.png';
 import author2 from '../../assets/img/testimonial/style5/2.png';
 import author3 from '../../assets/img/testimonial/style5/3.png';
 

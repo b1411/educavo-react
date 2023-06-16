@@ -3,6 +3,7 @@ import courseData from "./data/courseData";
 import { useRootContext } from "../../../components/Context/context";
 import { Modal } from "react-bootstrap";
 import Parse from "parse";
+import Loader from "../../../components/Loader/Loader";
 
 const emDash = String.fromCharCode(8212);
 
@@ -10,6 +11,7 @@ const CourseSidebar = () => {
   let courseId = useRootContext().courseId;
   let accessSet = useRootContext().setAccess;
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     let user = Parse.User.current();
@@ -27,6 +29,7 @@ const CourseSidebar = () => {
   async function handleEnter(e) {
     e.preventDefault();
     e.persist();
+    setLoading(true);
     let passCodes = new Parse.Query("PassCodes");
     let passCodeInput = e.target[2].value;
     let isContains = false;
@@ -48,10 +51,13 @@ const CourseSidebar = () => {
         user.set("courseId", courseId);
         user.set("email", e.target[1].value);
         await user.save();
+        setLoading(false);
         accessSet(true);
         setShowModal(false);
       } else {
+        setLoading(false);
         alert("Неверный код активации курса!");
+        
       }
     } catch (error) {
       if (error.code === 202) {
@@ -60,9 +66,11 @@ const CourseSidebar = () => {
           user.set("courseId", courseId);
           user.set("email", e.target[1].value);
           await user.save();
+          setLoading(false);
           accessSet(true);
           setShowModal(false);
         } catch (error) {
+          setLoading(false);
           alert("Неверный код активации курса!");
         }
       }
@@ -131,18 +139,26 @@ const CourseSidebar = () => {
         className="modal"
       >
         <Modal.Body>
-          <i
-            className="fa fa-times close-icon"
-            onClick={() => setShowModal(false)}
-          ></i>
-          <form className="modal-form" onSubmit={(e) => handleEnter(e)}>
-            <input type="text" placeholder="Введите ФИО" required />
-            <input type="email" placeholder="Введите ваш email" required />
-            <input type="text" placeholder="код активации курса" required />
-            <button type="submit" className="readon orange-btn">
-              Пройти курс
-            </button>
-          </form>
+          {loading ? (
+            <div className="loader">
+              <Loader />
+            </div>
+          ) : (
+            <>
+              <i
+                className="fa fa-times close-icon"
+                onClick={() => setShowModal(false)}
+              ></i>
+              <form className="modal-form" onSubmit={(e) => handleEnter(e)}>
+                <input type="text" placeholder="Введите ФИО" required />
+                <input type="email" placeholder="Введите ваш email" required />
+                <input type="text" placeholder="код активации курса" required />
+                <button type="submit" className="readon orange-btn">
+                  Пройти курс
+                </button>
+              </form>
+            </>
+          )}
         </Modal.Body>
       </Modal>
     </>

@@ -5,6 +5,7 @@ import Cta from "./CtaSection";
 import Testimonial from "./TestimonialSection";
 import ScrollToTop from "../../components/Common/ScrollTop";
 import FaqSection from "./FaqSection";
+import ThankYouLetterSection from "../../components/ThankYouLetter/ThankYouLetterSection";
 
 class HomeMain extends Component {
   render() {
@@ -30,9 +31,13 @@ class HomeMain extends Component {
         <FaqSection />
         {/* FaqSection-area-end */}
 
+        
+
         {/* testmonial-area-start */}
         <Testimonial />
         {/* testmonial-area-end */}
+
+        <ThankYouLetterSection />
 
         {/* blog-area-start */}
         {/* <Blog /> */}

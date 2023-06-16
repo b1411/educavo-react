@@ -29,26 +29,6 @@ const Footer = (props) => {
               <ul className="footer_social">
                 <li>
                   <a href="#">
-                    <i className="fa fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-pinterest"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-google-plus"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
                     <i className="fa fa-instagram"></i>
                   </a>
                 </li>
@@ -60,19 +40,27 @@ const Footer = (props) => {
                 <li>
                   <i className="flaticon-location"></i>
                   <div className="desc">
-                  Казахстан, г. Алматы, ул. Жумалиева, 86
+                    г. Алматы, улица Жумалиева, 86, БЦ Grand Asia, блок Б
                   </div>
                 </li>
                 <li>
                   <i className="flaticon-call"></i>
                   <div className="desc">
-                    <a href="tel:(+880)155-69569">(+880)155-69569</a>
+                    <a class="phone" href="tel:+77013533666">
+                      +7 701 353 36 66
+                    </a>
+                    <a class="phone" href="tel:+77003508313">
+                      +7 700 350 83 13
+                    </a>
+                    <a class="phone" href="tel:+77055533060">
+                      +7 705 553 30 60
+                    </a>
                   </div>
                 </li>
                 <li>
                   <i className="flaticon-email"></i>
                   <div className="desc">
-                    <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                    <a href="mailto:info@rcos.kz">info@rcos.kz</a>
                   </div>
                 </li>
               </ul>
@@ -111,7 +99,7 @@ const Footer = (props) => {
               </div>
               <div className="recent-post mb-20">
                 <div className="post-img">
-                  <img src={postImg2} alt="blog image" />
+                  <img src={postImg2} alt="blog" />
                 </div>
                 <div className="post-item">
                   <div className="post-desc">
