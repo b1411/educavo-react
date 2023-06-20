@@ -30,11 +30,11 @@ const SliderDefault = () => {
               <div className="content-part">
                 <div className="sl-sub-title">Безопасность и квалификация</div>
                 <h1 className="sl-title">
-                  Республиканский центр обучения и сертификации
+                  Республиканский Центр Обучения и Сертификации
                 </h1>
                 <div className="sl-btn">
                   <Link className="readon orange-btn main-home" to="/course-3">
-                    Все курсы
+                    Все курсы и семинары
                   </Link>
                 </div>
               </div>

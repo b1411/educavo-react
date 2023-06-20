@@ -73,7 +73,7 @@ const FaqSection = () => {
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel className="card-body">
-                      Мы предлагаем онлайн обучение с интерактивными материалами
+                      Мы предлагаем онлайн обучение с интерактивными материалами. Также мы предоставляем оффлайн обучение с выездом лектора в ваш офис
                     </AccordionItemPanel>
                   </AccordionItem>
                 </Accordion>

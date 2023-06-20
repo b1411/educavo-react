@@ -11,7 +11,7 @@ const MenuItems = () => {
         <Link to="/about">О компании</Link>
       </li>
       <li>
-        <Link to="/course-3">Курсы</Link>
+        <Link to="/course-3">Курсы и семинары</Link>
       </li>
       <li>
         <Link to="/blog">Блог</Link>
