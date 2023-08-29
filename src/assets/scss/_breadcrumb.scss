@@ -1,5 +1,6 @@
 .rs-breadcrumbs {
     position: relative;
+    height: 200px;
     .breadcrumbs-img {
         &::after {
             content: "";
@@ -12,6 +13,8 @@
         }
         img{
             width: 100%;
+            height: 200px;
+            background-position: center center;
         }
     } 
     .breadcrumbs-text {

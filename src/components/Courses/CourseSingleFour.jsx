@@ -1,16 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const CourseSingleFour = (props) => {
     const { courseClass, courseLink, courseImg, courseTitle, btnText } = props;
 
     return (
-        <div className={courseClass ? courseClass : 'courses-item'}>
+        <div className={courseClass ? courseClass : "courses-item"}>
             <div className="img-part">
-                <img
-                    src={courseImg}
-                    alt={courseTitle}
-                />
+                <img src={courseImg} alt={courseTitle} />
             </div>
             <div className="content-part">
                 {/* <span>
@@ -26,16 +23,29 @@ const CourseSingleFour = (props) => {
                         </span>
                     </li>
                 </ul> */}
-                <h3 className="title"><Link to={courseLink}>{courseTitle ? courseTitle : 'Introduction to Quantitativ and Qualitative.'}</Link></h3>
+                <h3 className="title">
+                    <Link to={courseLink}>
+                        {courseTitle
+                            ? courseTitle
+                            : "Introduction to Quantitativ and Qualitative."}
+                    </Link>
+                </h3>
                 <div className="bottom-part">
-                    <div className="btn-part">
-                        <Link to={courseLink}>{btnText ? btnText : 'Пройти обучение'} <i className="flaticon-next"></i></Link>
+                    <div className="readon orange-btn">
+                        <Link
+                            style={{
+                                color: "#111111",
+                            }}
+                            to={courseLink}
+                        >
+                            {btnText ? btnText : "Пройти обучение"}{" "}
+                            <i className="flaticon-next"></i>
+                        </Link>
                     </div>
                 </div>
             </div>
         </div>
+    );
+};
 
-    )
-}
-
-export default CourseSingleFour
+export default CourseSingleFour;

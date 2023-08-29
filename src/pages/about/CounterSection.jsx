@@ -1,117 +1,91 @@
-import React, { useState } from 'react';
-import CountUp from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
-import SectionTitle from '../../components/Common/SectionTitle';
+import React from "react";
+import SectionTitle from "../../components/Common/SectionTitle";
+import { Slide } from "react-reveal";
 
-// About Image
-import countIcon1 from '../../assets/img/about/style3/icons/1.png';
-import countIcon2 from '../../assets/img/about/style3/icons/2.png';
-import countIcon3 from '../../assets/img/about/style3/icons/3.png';
+function Stat({ iconClass, percent, name }) {
+    return (
+        <>
+            <div className="stat__item">
+                <i className={iconClass}></i>
+                <div className="stat__text">
+                    <p>{percent} %</p>
+                    <p>{name}</p>
+                </div>
+            </div>
+        </>
+    );
+}
 
 const AboutCounter = () => {
-
-    const [state, setState] = useState(true);
-
-    const counters = [
+    const statData = [
         {
-            countNum: 2,
-            countTitle: 'Студентов',
-            counterPrefix: 'k+',
-            countIcon: countIcon1
+            iconClass: "fa fa-industry",
+            percent: 95,
+            name: "Промышленность",
         },
         {
-            countNum: 2,
-            countTitle: 'Предоставленных сертификатов',
-            counterPrefix: 'k+',
-            countIcon: countIcon2
+            iconClass: "fa fa-cash-register",
+            percent: 97,
+            name: "Рынки",
         },
         {
-            countNum: 95,
-            countTitle: 'Довольных клиентов',
-            counterPrefix: '%',
-            countIcon: countIcon3
-        }
-
+            iconClass: "fa fa-university",
+            percent: 98,
+            name: "Банки",
+        },
+        {
+            iconClass: "fa fa-utensils",
+            percent: 97,
+            name: "Рестораны",
+        },
+        {
+            iconClass: "fa fa-gas-pump",
+            percent: 93,
+            name: "АЭС",
+        },
+        {
+            iconClass: "fa fa-school",
+            percent: 98,
+            name: "Университеты",
+        },
     ];
 
     return (
-        <div id="rs-about" className="rs-about style3 pt-110 md-pt-70">
-            <div className="container">
-                <div className="row y-middle">
-                    <div className="col-lg-4 lg-pr-0 md-mb-30">
-                        <div className="about-intro md-pr-16">
-                            <SectionTitle
-                                sectionClass="sec-title"
-                                subtitleClass="sub-title orange"
-                                subtitle="О нас"
-                                titleClass="title mb-20"
-                                title="Мы предлагаем лучшие курсы"
-                                descClass="desc big"
-                                description="Мы предлагаем лучшие курсы для развития ваших навыков. Вы можете выбрать любой курс, который вам нравится."
-                            />
-                        </div>
-                    </div>
-                    <div className="col-lg-8 pl-82 md-pl-14">
-                        {counters &&
-                            <div className="row rs-counter couter-area">
-                                {counters.map((counter, num) => (
-                                    <div key={num} className="col-md-4 sm-mb-30">
-                                        <div className="counter-item one">
-                                            <img className="count-img" src={counter.countIcon} alt="" />
-                                            <h2 className="number rs-count">
-                                                <CountUp start={state ? 0 : counter.countNum} end={counter.countNum} duration={10} onEnd={() => setState(false)} />
-                                                {({ countUpRef, start }) => (
-                                                    <VisibilitySensor onChange={start} delayedCall>
-                                                        <span ref={countUpRef} />
-                                                    </VisibilitySensor>
-                                                )}
-                                                <span className="counter-prefix">{counter.counterPrefix}</span>
-                                            </h2>
-                                            <h4 className="title mb-0">{counter.countTitle}</h4>
-                                        </div>
-                                    </div>
-                                )).slice(0, 1)}
-                                {counters.map((counter, num) => (
-                                    <div key={num} className="col-md-4 sm-mb-30">
-                                        <div className="counter-item two">
-                                            <img className="count-img" src={counter.countIcon} alt="" />
-                                            <h2 className="number rs-count">
-                                                <CountUp start={state ? 0 : counter.countNum} end={counter.countNum} duration={10} onEnd={() => setState(false)} />
-                                                {({ countUpRef, start }) => (
-                                                    <VisibilitySensor onChange={start} delayedCall>
-                                                        <span ref={countUpRef} />
-                                                    </VisibilitySensor>
-                                                )}
-                                                <span className="counter-prefix">{counter.counterPrefix}</span>
-                                            </h2>
-                                            <h4 className="title mb-0">{counter.countTitle}</h4>
-                                        </div>
-                                    </div>
-                                )).slice(1, 2)}
-                                {counters.map((counter, num) => (
-                                    <div key={num} className="col-md-4">
-                                        <div className="counter-item three">
-                                            <img className="count-img" src={counter.countIcon} alt="" />
-                                            <h2 className="number rs-count">
-                                                <CountUp start={state ? 0 : counter.countNum} end={counter.countNum} duration={10} onEnd={() => setState(false)} />
-                                                {({ countUpRef, start }) => (
-                                                    <VisibilitySensor onChange={start} delayedCall>
-                                                        <span ref={countUpRef} />
-                                                    </VisibilitySensor>
-                                                )}
-                                                <span className="counter-prefix">{counter.counterPrefix}</span>
-                                            </h2>
-                                            <h4 className="title mb-0">{counter.countTitle}</h4>
-                                        </div>
-                                    </div>
-                                )).slice(2, 3)}
+        <>
+            <div id="rs-about" className="rs-about style3 pt-110 md-pt-70">
+                <div className="container">
+                    <div className="row y-middle">
+                        <div className="col-lg-4 lg-pr-0 md-mb-30">
+                            <div className="about-intro md-pr-16">
+                                <Slide left cascade>
+                                    <SectionTitle
+                                        sectionClass="sec-title"
+                                        subtitleClass="sub-title orange"
+                                        subtitle="О нас"
+                                        titleClass="title mb-20"
+                                        title="Мы предлагаем лучшие курсы"
+                                        descClass="desc big"
+                                        description="Мы предлагаем лучшие курсы для развития ваших навыков. Вы можете выбрать любой курс, который вам нравится."
+                                    />
+                                </Slide>
                             </div>
-                        }
+                        </div>
+                        <div className="col-lg-8 pl-82 md-pl-14" style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fill, minmax(150px, 200px))",
+                            gap: "10px",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        }}>
+                            {statData.map((el, key) => {
+                                return <Stat {...el} key={key} />;
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
-}
+};
 
 export default AboutCounter;

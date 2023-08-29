@@ -40,7 +40,7 @@ const SinglePostLeftSidebar = () => {
             />
 
             <SiteBreadcrumb
-                pageTitle="Single Post Left Sidebar"
+                pageTitle=""
                 pageName="Blog"
                 breadcrumbsImg={bannerbg}
             />

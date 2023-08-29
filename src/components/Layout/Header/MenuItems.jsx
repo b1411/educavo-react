@@ -14,7 +14,7 @@ const MenuItems = () => {
         <Link to="/course-3">Курсы и семинары</Link>
       </li>
       <li>
-        <Link to="/blog">Блог</Link>
+        <Link to="/blog">Новости</Link>
       </li>
       <li>
         <Link to="/contact">Контакты</Link>

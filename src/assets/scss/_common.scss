@@ -161,7 +161,7 @@ ul {
 	background: $secondaryColor;
 }
 .event-bg {
-    background: #f9f8f8;
+    background: $primaryColor;
 }
 .event2-bg{
     background: #F4F6F5;
@@ -362,8 +362,6 @@ ul {
         .popup-videos {           
             color: $orangeColor;
             background: $whiteColor;
-            &:before {
-            }
             i {
                 &:before {
                     font-size: 30px;

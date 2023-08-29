@@ -1,6 +1,6 @@
-import ReactPlayer from "react-player";
 import InteractiveQuiz from "../../../components/Test/InteractiveQuiz";
 import { useRootContext } from "../../../components/Context/context";
+import { ErrorBoundary } from "react-error-boundary";
 
 const quiz = {
     1: [
@@ -463,24 +463,41 @@ const quiz = {
                 "численность работников которого превышает 50 человек, создается служба ОТ или вводиться должность специалиста по ОТ",
                 "по усмотрению администрации",
             ],
-            correctAnswer: "численность работников которого превышает 50 человек, создается служба ОТ или вводиться должность специалиста по ОТ",   
+            correctAnswer:
+                "численность работников которого превышает 50 человек, создается служба ОТ или вводиться должность специалиста по ОТ",
         },
     ],
+    6: [{}],
 };
+
+const videoLinks = {
+    1: "https://www.youtube.com/embed/mCy-_cpwQNk",
+    2: "https://www.youtube.com/embed/mCy-_cpwQNk",
+    6: "https://drive.google.com/file/d/1-VpkBsI2iOptlIjVhYtk1xtRvc4Cg4Cg/preview",
+};
+
+function ErrorFallback({ error }) {
+    return <div role="alert">{error}</div>;
+}
 
 export default function CourseTab() {
     const courseId = useRootContext().courseId;
+
     return (
         <>
             <div className="content white-bg pt-30">
                 <div className="course-overview">
                     <div className="inner-box">
-                        <ReactPlayer
-                            url="https://www.youtube.com/watch?v=mCy-_cpwQNk"
-                            controls
-                            width={"100%"}
-                        />
-                        <InteractiveQuiz quiz={quiz[courseId]} />
+                        <iframe
+                            title="Видео курса"
+                            src={videoLinks[courseId]}
+                            allow="autoplay"
+                        ></iframe>
+                        <div>
+                            <ErrorBoundary FallbackComponent={ErrorFallback}>
+                                <InteractiveQuiz quiz={quiz[courseId]} />
+                            </ErrorBoundary>
+                        </div>
                     </div>
                 </div>
             </div>

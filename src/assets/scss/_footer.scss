@@ -95,7 +95,7 @@
             a {
                 display: inline-block;
                 img {
-                    max-width: 190px;
+                    max-width: 100px;
                 }
             }
         }
@@ -450,7 +450,7 @@
                 a {
                     display: inline-block;
                     img {
-                        max-width: 190px;
+                        max-width: 100px;
                     }
                 }
             }
@@ -493,7 +493,7 @@
                     a {
                         display: inline-block;
                         img {
-                            max-width: 190px;
+                            max-width: 100px;
                         }
                     }
                 }
@@ -611,7 +611,7 @@
                             content: "";
                             position: absolute;
                             font-size: 18px;
-                            background: #ff5421;
+                            background: $primaryColor;
                             left: 0;
                             top: 50%;
                             width: 6px;
@@ -778,7 +778,7 @@
                     a {
                         display: inline-block;
                         img {
-                            max-width: 190px;
+                            max-width: 100px;
                         }
                     }
                 }
@@ -949,7 +949,7 @@
                 a {
                     display: inline-block;
                     img {
-                        max-width: 190px;
+                        max-width: 100px;
                     }
                 }
             }

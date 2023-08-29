@@ -12,29 +12,37 @@ import SinglePostRightSidebar from "../pages/blog/single-post-right-sidebar";
 import Contact from "../pages/contact";
 import Error from "../pages/404";
 import LoadTop from "../components/Common/ScrollTop/LoadTop";
+import { news } from "../sample-data/news";
 
 const App = () => {
-  return (
-    <div className="App">
-      <Router>
-        <LoadTop />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/course-3" component={CourseThree} />
-          <Route path="/course/course-single/:id" component={CourseSingle} />
-          <Route path="/blog" exact component={Blog} />
-          <Route
-            path="/blog/single-post-right-sidebar"
-            component={SinglePostRightSidebar}
-          />
-          <Route path="/contact" component={Contact} />
-          <Route component={Error} />
-        </Switch>
-      </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <LoadTop />
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/home" component={Home} />
+                    <Route path="/about" component={About} />
+                    <Route path="/course-3" component={CourseThree} />
+                    <Route
+                        path="/course/course-single/:id"
+                        component={CourseSingle}
+                    />
+                    <Route path="/blog" exact component={Blog} />
+                    {
+                      news.map((item, i) => {
+                        return <Route path={`/blog/${news[i].transliterated}`}>
+                            <SinglePostRightSidebar news={item} />
+                        </Route>
+                      })
+                    }
+                    <Route path="/contact" component={Contact} />
+                    <Route component={Error} />
+
+                </Switch>
+            </Router>
+        </div>
+    );
 };
 
 export default App;

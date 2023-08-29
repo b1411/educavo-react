@@ -19,7 +19,7 @@ const AboutMain = () => {
       {/* <Team /> */}
       {/* Team Section End */}
 
-      <ThankYouLetterSection />
+      {/* c */}
 
       {/* Testimonial Section Start */}
       <Testimonial />

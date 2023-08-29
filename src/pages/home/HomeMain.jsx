@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import SliderDefault from "../../components/Slider/SliderDefault";
 import Categories from "./CategoriesSection";
-import Cta from "./CtaSection";
-import Testimonial from "./TestimonialSection";
+
 import ScrollToTop from "../../components/Common/ScrollTop";
-import FaqSection from "./FaqSection";
+
 import ThankYouLetterSection from "../../components/ThankYouLetter/ThankYouLetterSection";
 
 class HomeMain extends Component {
@@ -24,17 +23,17 @@ class HomeMain extends Component {
         {/* Courses-area-end */}
 
         {/* Cta-area-start */}
-        <Cta />
+        {/* <Cta /> */}
         {/* Cta-area-end */}
 
         {/* FaqSection-area-start */}
-        <FaqSection />
+        {/* <FaqSection /> */}
         {/* FaqSection-area-end */}
 
         
 
         {/* testmonial-area-start */}
-        <Testimonial />
+        {/* <Testimonial /> */}
         {/* testmonial-area-end */}
 
         <ThankYouLetterSection />

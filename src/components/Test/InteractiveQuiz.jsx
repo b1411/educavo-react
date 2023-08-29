@@ -1,3 +1,10 @@
+import { useState } from "react";
+import { Modal } from "react-bootstrap";
+import Parse from "parse";
+import { useRootContext } from "../Context/context";
+import { useEffect } from "react";
+import { useRef } from "react";
+
 function QuestionWithOneAnswer({ question, answerId }) {
     return (
         <div className="question-with-one-answer">
@@ -45,10 +52,20 @@ function QuestionWithMultipleAnswers({ question, answerId }) {
 }
 
 function Quiz({ quiz }) {
-    let score = 0;
-    function handleQuiz(e) {
-        e.preventDefault();
-        const formData = new FormData(e.target);
+    let [score, setScore] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    let courseId = useRootContext().courseId;
+    const [accessToTest, setAccessToTest] = useState(true);
+    const formRef = useRef(null);
+
+    // useEffect(() => {
+    //     if (Array.from(Parse.User.current().get("acceptedTests"))?.includes(courseId)) {
+    //         setShowModal(true);
+    //     }
+    // }, [courseId]);
+
+    useEffect(() => {
+        const formData = new FormData(formRef.current);
         const answers = {};
         for (let [key, value] of formData.entries()) {
             if (answers[key]) {
@@ -60,9 +77,9 @@ function Quiz({ quiz }) {
         quiz.forEach((question) => {
             const userAnswers = answers[question.question] || [];
 
-            if (question.type === "one-answer") { 
+            if (question.type === "one-answer") {
                 if (question.correctAnswer === userAnswers[0]) {
-                    score++;
+                    setScore((prev) => prev + 1);
                 }
             } else if (
                 question.type === "multiple-answers" &&
@@ -75,42 +92,107 @@ function Quiz({ quiz }) {
                     }
                 });
                 if (correct) {
-                    score++;
+                    setScore((prev) => prev + 1);
                 }
             }
         });
+    });
 
-        setTimeout(() => {
-            console.log(score);
-            alert(score);
+    async function handleQuiz(e) {
+        e.preventDefault();
 
-            score = 0;
-        }, 0);
+        setShowModal(true);
+
+        if (score >= quiz.length / 2 && score <= quiz.length) {
+            let user = Parse.User.current();
+            let userTests = user.get("acceptedTests");
+            Array.from(userTests)?.push(courseId);
+            user.set("acceptedTests", userTests);
+            await user.save();
+            setAccessToTest(false);
+        }
     }
 
     return (
-        <div className="quiz">
-            <form onSubmit={(e) => handleQuiz(e)} method="post">
-                {quiz.map((question, index) =>
-                    question.type === "one-answer" ? (
-                        <QuestionWithOneAnswer
-                            question={question}
-                            key={index}
-                            answerId={index}
-                        />
-                    ) : (
-                        <QuestionWithMultipleAnswers
-                            question={question}
-                            key={index}
-                            answerId={index}
-                        />
-                    ),
-                )}
-                <button type="submit" className="readon orange-btn">
-                    Отправить
-                </button>
-            </form>
-        </div>
+        <>
+            {accessToTest ? (
+                <>
+                    <div className="quiz">
+                        <form onSubmit={(e) => handleQuiz(e)} ref={formRef}>
+                            {quiz.map((question, index) =>
+                                question.type === "one-answer" ? (
+                                    <QuestionWithOneAnswer
+                                        question={question}
+                                        key={index}
+                                        answerId={index}
+                                    />
+                                ) : (
+                                    <QuestionWithMultipleAnswers
+                                        question={question}
+                                        key={index}
+                                        answerId={index}
+                                    />
+                                ),
+                            )}
+                            <button type="submit" className="readon orange-btn">
+                                Отправить
+                            </button>
+                        </form>
+                        <Modal show={showModal} centered keyboard>
+                            <Modal.Body
+                                style={{
+                                    padding: "50px 0 0 0",
+                                    width: "100%",
+                                    textAlign: "center",
+                                }}
+                            >
+                                <i
+                                    className="fa fa-times close-icon"
+                                    onClick={() => {
+                                        setShowModal(false);
+                                        setScore(0);
+                                    }}
+                                ></i>
+                                {score >= 0 && score <= quiz.length / 2 ? (
+                                    <>
+                                        <i
+                                            className="fa fa-times-circle-o fa-5x"
+                                            style={{
+                                                color: "red",
+                                                marginBottom: "15px",
+                                            }}
+                                        ></i>
+                                        <h4>Вы не прошли тест</h4>
+                                    </>
+                                ) : (
+                                    <>
+                                        <i
+                                            className="fa fa-check-circle-o fa-5x"
+                                            style={{
+                                                color: "green",
+                                                marginBottom: "15px",
+                                            }}
+                                        ></i>
+                                        <h4>Вы прошли тест</h4>
+                                        <p>
+                                            Вам доступно{" "}
+                                            <a href="" download>
+                                                методическое пособие
+                                            </a>
+                                        </p>
+                                    </>
+                                )}
+                                <p>
+                                    Ваш результат: {score} из {quiz.length}
+                                </p>
+                            </Modal.Body>
+                        </Modal>
+                    </div>
+                </>
+            ) : (
+                "Вы уже прошли тест!"
+            )}
+        </>
     );
 }
 

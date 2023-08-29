@@ -258,7 +258,7 @@ const RSMobileMenu = ({
                 }}
                 className={parentMenu === "blog" ? "active-menu" : ""}
               >
-                Блог
+                Новости
               </Link>
             </li>
             <li>

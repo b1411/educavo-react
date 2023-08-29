@@ -37,8 +37,8 @@ const Blog = () => {
 
             {/* breadcrumb-area-start */}
             <SiteBreadcrumb
-                pageTitle="Блог"
-                pageName="Блог"
+                pageTitle="Новости"
+                pageName="Новости"
                 breadcrumbsImg={bannerbg}
             />
             {/* breadcrumb-area-End */}
@@ -48,7 +48,7 @@ const Blog = () => {
             {/* Blog Main End */}
 
             <Newsletter
-                sectionClass="rs-newsletter style1 orange-style mb--90 sm-mb-0 sm-pb-80"
+                sectionClass="rs-newsletter style1 orange-color mb--90 sm-mb-0 sm-pb-70"
                 titleClass="title mb-0 white-color"
             />
 

@@ -1,47 +1,43 @@
-import React from 'react';
+import React from "react";
 
-import BlogDetails from './BlogDetails';
-import SinglePostSidebar from './SinglePostSidebar';
-import Header from '../../components/Layout/Header/Header';
-import Footer from '../../components/Layout/Footer/Footer';
-import Newsletter from '../../components/Common/Newsletter';
-import ScrollToTop from '../../components/Common/ScrollTop';
-import OffWrap from '../../components/Layout/Header/OffWrap';
-import SiteBreadcrumb from '../../components/Common/Breadcumb';
-
+import BlogDetails from "./BlogDetails";
+import SinglePostSidebar from "./SinglePostSidebar";
+import Header from "../../components/Layout/Header/Header";
+import Footer from "../../components/Layout/Footer/Footer";
+import Newsletter from "../../components/Common/Newsletter";
+import ScrollToTop from "../../components/Common/ScrollTop";
+import OffWrap from "../../components/Layout/Header/OffWrap";
+import SiteBreadcrumb from "../../components/Common/Breadcumb";
 
 // Image
 
-import Logo from '../../assets/img/logo/dark-logo.png';
-import footerLogo from '../../assets/img/logo/lite-logo.png';
+import Logo from "../../assets/img/logo/dark-logo.png";
+import footerLogo from "../../assets/img/logo/lite-logo.png";
 
 // Breadcrumbs Background Image
-import bannerbg from '../../assets/img/breadcrumbs/5.jpg';
+import bannerbg from "../../assets/img/breadcrumbs/5.jpg";
 
-const SinglePostRightSidebar = () => {
-
+const SinglePostRightSidebar = ({ news }) => {
     return (
         <React.Fragment>
-
             <OffWrap />
             <Header
-                parentMenu='blog'
-                secondParentMenu='blogSingle'
+                parentMenu="blog"
+                secondParentMenu="blogSingle"
                 headerNormalLogo={Logo}
                 headerStickyLogo={Logo}
                 mobileNormalLogo={Logo}
                 CanvasLogo={Logo}
                 CanvasClass="right_menu_togle hidden-md"
                 headerClass="full-width-header header-style1 home8-style4"
-                TopBar='enable'
+                TopBar="enable"
                 TopBarClass="topbar-area home8-topbar"
-                emailAddress='support@website.com'
-                Location='374 William S Canning Blvd, MA 2721, USA '
+                emailAddress="support@website.com"
+                Location="374 William S Canning Blvd, MA 2721, USA "
             />
-
             <SiteBreadcrumb
-                pageTitle="Single Post Right Sidebar"
-                pageName="Blog"
+                pageTitle={news.title}
+                pageName="Новости"
                 breadcrumbsImg={bannerbg}
             />
 
@@ -55,7 +51,7 @@ const SinglePostRightSidebar = () => {
                             </div>
                         </div>
                         <div className="col-lg-8 pr-50 md-pr-14">
-                            <BlogDetails />
+                            <BlogDetails news={news} />
                         </div>
                     </div>
                 </div>
@@ -73,18 +69,10 @@ const SinglePostRightSidebar = () => {
             />
 
             {/* scrolltop-start */}
-            <ScrollToTop
-                scrollClassName="scrollup orange-color"
-            />
+            <ScrollToTop scrollClassName="scrollup orange-color" />
             {/* scrolltop-end */}
-
-            
         </React.Fragment>
     );
-}
-
+};
 
 export default SinglePostRightSidebar;
-
-
-

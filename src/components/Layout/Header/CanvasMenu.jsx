@@ -113,7 +113,7 @@ const CanvasMenu = (props) => {
                   title="map"
                 ></iframe>
         </div>
-        <div className="canvas-contact">
+        {/* <div className="canvas-contact">
           <ul className="social">
             <li>
               <a href="#">
@@ -121,7 +121,7 @@ const CanvasMenu = (props) => {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </nav>
     </React.Fragment>
   );

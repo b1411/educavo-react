@@ -48,7 +48,7 @@ const ContactForm = (props) => {
             type="text"
             id="name"
             name="name"
-            placeholder="Имя"
+            placeholder="Имя*"
             required
           />
         </div>
@@ -59,7 +59,7 @@ const ContactForm = (props) => {
             type="text"
             id="name"
             name="name"
-            placeholder="Фамилия"
+            placeholder="Фамилия*"
             required
           />
         </div>
@@ -70,8 +70,7 @@ const ContactForm = (props) => {
             type="text"
             id="email"
             name="email"
-            placeholder="E-Mail"
-            required
+            placeholder="E-Mail"  
           />
         </div>
 
@@ -104,9 +103,13 @@ const ContactForm = (props) => {
           className={
             submitBtnClass ? submitBtnClass : "readon learn-more submit"
           }
+          style={{
+            backgroundColor:  "white",
+            color: "#21a7d0"
+          }}
           type="submit"
         >
-          {btnText ? btnText : "Submit Now"}
+          Отправить
         </button>
       </div>
     </form>

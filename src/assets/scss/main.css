@@ -33,6 +33,7 @@
 /* 1. Theme default css */
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 html,
 body {
   font-size: 15px;
@@ -5196,6 +5197,7 @@ select {
 /* button style */
 .btn {
   -moz-user-select: none;
+  user-select: none;
   background: #096bd8;
   border: medium none;
   display: inline-block;
@@ -120513,6 +120515,7 @@ Creation date: 31/01/2019 11:48
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);

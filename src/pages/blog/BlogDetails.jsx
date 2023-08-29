@@ -1,17 +1,13 @@
-import React from 'react';
-import Commenting from '../../components/Widget/Commenting';
-import PostContent from '../../components/Widget/PostContent';
-import PostNavigation from '../../components/Widget/PostNavigation';
+import React from "react";
+import PostContent from "../../components/Widget/PostContent";
 
-const BlogDetails = () => {
 
+const BlogDetails = ({ news }) => {
     return (
         <>
-            <PostContent />
-            <PostNavigation />
-            <Commenting />
+            <PostContent news={news} />
         </>
     );
-}
+};
 
 export default BlogDetails;
