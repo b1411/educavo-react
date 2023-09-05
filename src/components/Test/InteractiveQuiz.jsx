@@ -64,7 +64,9 @@ function Quiz({ quiz }) {
     //     }
     // }, [courseId]);
 
-    useEffect(() => {
+    async function handleQuiz(e) {
+        e.preventDefault();
+
         const formData = new FormData(formRef.current);
         const answers = {};
         for (let [key, value] of formData.entries()) {
@@ -96,14 +98,10 @@ function Quiz({ quiz }) {
                 }
             }
         });
-    });
-
-    async function handleQuiz(e) {
-        e.preventDefault();
 
         setShowModal(true);
 
-        if (score >= quiz.length / 2 && score <= quiz.length) {
+        if (score >= (quiz.length - 1) / 2 && score <= quiz.length - 1) {
             let user = Parse.User.current();
             let userTests = user.get("acceptedTests");
             Array.from(userTests)?.push(courseId);
@@ -119,7 +117,7 @@ function Quiz({ quiz }) {
                 <>
                     <div className="quiz">
                         <form onSubmit={(e) => handleQuiz(e)} ref={formRef}>
-                            {quiz.map((question, index) =>
+                            {quiz.slice(0, quiz.length - 1).map((question, index) =>
                                 question.type === "one-answer" ? (
                                     <QuestionWithOneAnswer
                                         question={question}
@@ -138,60 +136,66 @@ function Quiz({ quiz }) {
                                 Отправить
                             </button>
                         </form>
-                        <Modal show={showModal} centered keyboard>
-                            <Modal.Body
-                                style={{
-                                    padding: "50px 0 0 0",
-                                    width: "100%",
-                                    textAlign: "center",
-                                }}
-                            >
-                                <i
-                                    className="fa fa-times close-icon"
-                                    onClick={() => {
-                                        setShowModal(false);
-                                        setScore(0);
-                                    }}
-                                ></i>
-                                {score >= 0 && score <= quiz.length / 2 ? (
-                                    <>
-                                        <i
-                                            className="fa fa-times-circle-o fa-5x"
-                                            style={{
-                                                color: "red",
-                                                marginBottom: "15px",
-                                            }}
-                                        ></i>
-                                        <h4>Вы не прошли тест</h4>
-                                    </>
-                                ) : (
-                                    <>
-                                        <i
-                                            className="fa fa-check-circle-o fa-5x"
-                                            style={{
-                                                color: "green",
-                                                marginBottom: "15px",
-                                            }}
-                                        ></i>
-                                        <h4>Вы прошли тест</h4>
-                                        <p>
-                                            Вам доступно{" "}
-                                            <a href="" download>
-                                                методическое пособие
-                                            </a>
-                                        </p>
-                                    </>
-                                )}
-                                <p>
-                                    Ваш результат: {score} из {quiz.length}
-                                </p>
-                            </Modal.Body>
-                        </Modal>
                     </div>
                 </>
             ) : (
                 "Вы уже прошли тест!"
             )}
+            <Modal show={showModal} centered keyboard>
+                <Modal.Body
+                    style={{
+                        padding: "50px 0 0 0",
+                        width: "100%",
+                        textAlign: "center",
+                    }}
+                >
+                    <i
+                        className="fa fa-times close-icon"
+                        onClick={() => {
+                            setShowModal(false);
+                            setScore(0);
+                        }}
+                    ></i>
+                    {score >= 0 && score <= (quiz.length - 1) / 2 ? (
+                        <>
+                            <i
+                                className="fa fa-times-circle-o fa-5x"
+                                style={{
+                                    color: "red",
+                                    marginBottom: "15px",
+                                }}
+                            ></i>
+                            <h4>Вы не прошли тест</h4>
+                        </>
+                    ) : (
+                        <>
+                            <i
+                                className="fa fa-check-circle-o fa-5x"
+                                style={{
+                                    color: "green",
+                                    marginBottom: "15px",
+                                }}
+                            ></i>
+                            <h4>Вы прошли тест</h4>
+                            <p>
+                                Вам доступны{" "}методические пособия:<br/>
+                                {
+                                    quiz[quiz.length - 1].manualLinks.map((el, index) => {
+                                        return (
+                                            <a href={"https://rcos.kz/assets/" + el} download>
+                                                {index + 1}{" "}
+                                            </a>
+                                        )
+                                    })
+                                }
+                            </p>
+                        </>
+                    )}
+                    <p>
+                        Ваш результат: {score} из {quiz.length - 1}
+                    </p>
+                </Modal.Body>
+            </Modal>
         </>
     );
 }

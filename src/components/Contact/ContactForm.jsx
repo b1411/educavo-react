@@ -16,6 +16,7 @@ const ContactForm = (props) => {
       alert("Превышено количество попыток отправки заявки!");
       return;
     }
+    let formatedMessage = JSON.stringify(`Имя: ${e.target[0].value} ${e.target[1].value}\nEmail: ${e.target[2].value}\nТелефон: ${phoneRef.current.getInputValue()}\nСообщение: ${e.target[4].value}`);
     const application = new Parse.Object("Application");
     application.set("name", e.target[0].value + " " + e.target[1].value);
     application.set("email", e.target[2].value);
@@ -24,19 +25,35 @@ const ContactForm = (props) => {
       phoneRef.current.getInputValue().replace(/\D/g, "")
     );
     application.set("message", e.target[4].value);
-    application.save().then(
+    Promise.all([application.save().then(
       (result) => {
         alert("Ваша заявка успешно отправлена!");
         e.target[0].value = "";
         e.target[1].value = "";
         e.target[2].value = "";
         e.target[3].value = "";
-      },
-      (error) => {
+      }, (error) => {
+        return Promise.reject( error.message );
+      }), fetch("https://api.greenapi.com/waInstance7103853072/sendMessage/1f00396248d64b6bb194d8a8bb2c23a8fc9fcffeb876497abb", {
+        "headers": {
+          "accept": "*/*",
+          "accept-language": "ru,en;q=0.9",
+          "content-type": "application/json",
+          "sec-ch-ua": "\"Chromium\";v=\"112\", \"YaBrowser\";v=\"23\", \"Not:A-Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+          "Referer": "https://console.green-api.com/",
+          "Referrer-Policy": "strict-origin-when-cross-origin"
+        },
+        "body": `{\"chatId\":\"77003508313@c.us\",\"message\":${formatedMessage}}`,
+        "method": "POST"
+      })]).catch((error) => {
         failedAttempts++;
         alert("Ошибка при отправке заявки!");
-      }
-    );
+      });
   };
 
   return (
@@ -70,7 +87,7 @@ const ContactForm = (props) => {
             type="text"
             id="email"
             name="email"
-            placeholder="E-Mail"  
+            placeholder="E-Mail"
           />
         </div>
 
@@ -104,7 +121,7 @@ const ContactForm = (props) => {
             submitBtnClass ? submitBtnClass : "readon learn-more submit"
           }
           style={{
-            backgroundColor:  "white",
+            backgroundColor: "white",
             color: "#21a7d0"
           }}
           type="submit"
