@@ -634,7 +634,7 @@ const quiz = {
 const videoLinks = {
     1: "https://www.youtube.com/embed/mCy-_cpwQNk",
     2: "https://www.youtube.com/embed/mCy-_cpwQNk",
-    6: "https://drive.google.com/file/d/1-VpkBsI2iOptlIjVhYtk1xtRvc4Cg4Cg/preview",
+    6: "https://drive.google.com/file/d/1S8-dfkdRRH3n-zGuXYuPTLKiY9NrjLs9/preview",
 };
 
 function ErrorFallback({ error }) {
