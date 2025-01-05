@@ -37,31 +37,14 @@ export default defineConfig(() => {
         ],
         plugins: [
             react(),
-            vitePrerender({
-                staticDir: path.resolve(__dirname, "build"),
-                routes: [
-                    "/",
-                    "/about",
-                    "/contact",
-                    "/course-3",
-                    "/course-single/1",
-                    "/course-single/2",
-                    "/course-single/3",
-                    "/course-single/4",
-                    "/course-single/5",
-                    "/course-single/6",
-                    "/blog",
-                    "/single-post-right-sidebar",
-                ],
-            }),
             eslint({
                 include: ["./src/**/*.jsx", "./src/**/*.js"],
                 exclude: ["node_modules/**", "build/**"],
                 cache: false,
             }),
             ViteWebp({
-              extensions: ["png", "jpg", "jpeg", "PNG", "JPG", "JPEG"],
-          }),
+                extensions: ["png", "jpg", "jpeg", "PNG", "JPG", "JPEG"],
+            }),
         ],
     };
 });
