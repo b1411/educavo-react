@@ -1,4 +1,4 @@
-# Getting Started with Educavo – Education React Template
+# Getting Started
 
 ## Available Scripts
 
