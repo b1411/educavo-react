@@ -28,7 +28,7 @@ const ContactMain = () => {
                                     boxClass="sm-mb-30"
                                     title="Адрес"
                                     iconClass="flaticon-location"
-                                    address="г. Алматы, улица Жумалиева, 86, БЦ Grand Asia, блок Б"
+                                    address='г. Алматы, ул. Каныша Сатпаева, 30/8, БЦ "Тенгиз Тауэрс", 3 этаж, офис 147'
                                 />
                             </div>
                             <div className="col-md-4">
@@ -46,7 +46,6 @@ const ContactMain = () => {
                                     iconClass="flaticon-phone"
                                     phone={[
                                         "+7 701 353 36 66",
-                                        "+7 700 350 83 13",
                                         "+7 705 553 30 60",
                                     ]}
                                 />
@@ -61,14 +60,16 @@ const ContactMain = () => {
                             <Slide left>
                                 <div className="map-canvas">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1452.9543826454865!2d76.91250992754809!3d43.25333387775002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883694c11c0ea0d%3A0x368b21329f571eef!2sZhumaliev%20St%2086%2C%20Almaty%20050026!5e0!3m2!1sen!2skz!4v1684987235285!5m2!1sen!2skz"
-                                        width={400}
-                                        height={300}
-                                        style={{ border: 0 }}
+                                        title="map"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.7920926205474!2d76.92117229421004!3d43.23446408617067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836ed47efdd8e5%3A0xedd1874217a5b656!2z0KLQtdC90LPQuNC3INGC0LDRg9GN0YDRgQ!5e0!3m2!1sru!2skz!4v1737029293760!5m2!1sru!2skz"
+                                        width="600"
+                                        height="450"
+                                        style={{
+                                            border: 0,
+                                        }}
                                         allowFullScreen=""
                                         loading="lazy"
-                                        referrerPolicy="no-referrer"
-                                        title="map"
+                                        referrerPolicy="no-referrer-when-downgrade"
                                     ></iframe>
                                 </div>
                             </Slide>

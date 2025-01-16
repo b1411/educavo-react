@@ -58,8 +58,8 @@ const Footer = (props) => {
                                 <li>
                                     <i className="flaticon-location"></i>
                                     <div className="desc">
-                                        г. Алматы, улица Жумалиева, 86, БЦ Grand
-                                        Asia, блок Б
+                                        г. Алматы, ул. Каныша Сатпаева, 30/8, БЦ
+                                        "Тенгиз Тауэрс", 3 этаж, офис 147
                                     </div>
                                 </li>
                                 <li>
@@ -70,12 +70,6 @@ const Footer = (props) => {
                                             href="tel:+77013533666"
                                         >
                                             +7 701 353 36 66
-                                        </a>
-                                        <a
-                                            class="phone"
-                                            href="tel:+77003508313"
-                                        >
-                                            +7 700 350 83 13
                                         </a>
                                         <a
                                             class="phone"
