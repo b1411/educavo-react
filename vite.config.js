@@ -1,13 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import vitePrerender from "vite-plugin-prerender";
-import path from "path";
 import eslint from "vite-plugin-eslint";
 import ViteWebp from "vite-plugin-webp-generator";
 
 export default defineConfig(() => {
     return {
-        base: "./",
+        base: "/",
         build: {
             outDir: "build",
         },
