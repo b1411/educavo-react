@@ -115,28 +115,37 @@ function Quiz({ quiz }) {
         <>
             {accessToTest ? (
                 <>
-                    <div className="quiz">
-                        <form onSubmit={(e) => handleQuiz(e)} ref={formRef}>
-                            {quiz.slice(0, quiz.length - 1).map((question, index) =>
-                                question.type === "one-answer" ? (
-                                    <QuestionWithOneAnswer
-                                        question={question}
-                                        key={index}
-                                        answerId={index}
-                                    />
-                                ) : (
-                                    <QuestionWithMultipleAnswers
-                                        question={question}
-                                        key={index}
-                                        answerId={index}
-                                    />
-                                ),
-                            )}
-                            <button type="submit" className="readon orange-btn">
-                                Отправить
-                            </button>
-                        </form>
-                    </div>
+                    {quiz ? (
+                        <div className="quiz">
+                            <form onSubmit={(e) => handleQuiz(e)} ref={formRef}>
+                                {quiz
+                                    .slice(0, quiz.length - 1)
+                                    .map((question, index) =>
+                                        question.type === "one-answer" ? (
+                                            <QuestionWithOneAnswer
+                                                question={question}
+                                                key={index}
+                                                answerId={index}
+                                            />
+                                        ) : (
+                                            <QuestionWithMultipleAnswers
+                                                question={question}
+                                                key={index}
+                                                answerId={index}
+                                            />
+                                        ),
+                                    )}
+                                <button
+                                    type="submit"
+                                    className="readon orange-btn"
+                                >
+                                    Отправить
+                                </button>
+                            </form>
+                        </div>
+                    ) : (
+                        "Тест не найден"
+                    )}
                 </>
             ) : (
                 "Вы уже прошли тест!"
@@ -156,7 +165,7 @@ function Quiz({ quiz }) {
                             setScore(0);
                         }}
                     ></i>
-                    {score >= 0 && score <= (quiz.length - 1) / 2 ? (
+                    {score >= 0 && score <= (quiz?.length - 1) / 2 ? (
                         <>
                             <i
                                 className="fa fa-times-circle-o fa-5x"
@@ -178,21 +187,28 @@ function Quiz({ quiz }) {
                             ></i>
                             <h4>Вы прошли тест</h4>
                             <p>
-                                Вам доступны{" "}методические пособия:<br/>
-                                {
-                                    quiz[quiz.length - 1].manualLinks.map((el, index) => {
+                                Вам доступны методические пособия:
+                                <br />
+                                {quiz?.[quiz?.length - 1].manualLinks.map(
+                                    (el, index) => {
                                         return (
-                                            <a href={"https://rcos.kz/assets/" + el} download>
+                                            <a
+                                                href={
+                                                    "https://rcos.kz/assets/" +
+                                                    el
+                                                }
+                                                download
+                                            >
                                                 {index + 1}{" "}
                                             </a>
-                                        )
-                                    })
-                                }
+                                        );
+                                    },
+                                )}
                             </p>
                         </>
                     )}
                     <p>
-                        Ваш результат: {score} из {quiz.length - 1}
+                        Ваш результат: {score} из {quiz?.length - 1}
                     </p>
                 </Modal.Body>
             </Modal>
