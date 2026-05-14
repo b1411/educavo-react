@@ -58,7 +58,7 @@ const Header = (props) => {
                     {TopBar ? (
                         <TopHeader
                             topBarClass={TopBarClass}
-                            emailAddress="+7 701 353 36 66"
+                            emailAddress="8 700 541 03 41"
                             phoneNumber={phoneNumber}
                             Location="г. Алматы, улица Жумалиева, 86, БЦ Grand Asia, блок Б"
                         />
@@ -132,7 +132,7 @@ const Header = (props) => {
                                                 </Link>
                                                 <div className="socials">
                                                     <a
-                                                        href="https://wa.me/77055533060"
+                                                        href="https://wa.me/77005410341"
                                                         target="_blank"
                                                         rel="noreferrer"
                                                     >
@@ -197,7 +197,7 @@ const Header = (props) => {
                                         <div className="expand-items">
                                             <div className="socials">
                                                 <a
-                                                    href="https://wa.me/77055533060"
+                                                    href="https://wa.me/77005410341"
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >

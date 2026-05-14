@@ -43,7 +43,7 @@ const Footer = (props) => {
                                         <i className="fa fa-instagram"></i>
                                     </a>
                                     <a
-                                        href="https://wa.me/77055533060"
+                                        href="https://wa.me/77005410341"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -59,7 +59,7 @@ const Footer = (props) => {
                                     <i className="flaticon-location"></i>
                                     <div className="desc">
                                         г. Алматы, ул. Каныша Сатпаева, 30/8, БЦ
-                                        "Тенгиз Тауэрс", 3 этаж, офис 147
+                                        "Тенгиз Тауэрс", 3 этаж, офис 148
                                     </div>
                                 </li>
                                 <li>
@@ -67,23 +67,17 @@ const Footer = (props) => {
                                     <div className="desc">
                                         <a
                                             class="phone"
-                                            href="tel:+77013533666"
+                                            href="tel:+77005410341"
                                         >
-                                            +7 701 353 36 66
-                                        </a>
-                                        <a
-                                            class="phone"
-                                            href="tel:+77055533060"
-                                        >
-                                            +7 705 553 30 60
+                                            8 700 541 03 41
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <i className="flaticon-email"></i>
                                     <div className="desc">
-                                        <a href="mailto:info@rcos.kz">
-                                            info@rcos.kz
+                                        <a href="mailto:info@rcos.com.kz">
+                                            info@rcos.com.kz
                                         </a>
                                     </div>
                                 </li>

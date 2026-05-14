@@ -28,7 +28,7 @@ const ContactMain = () => {
                                     boxClass="sm-mb-30"
                                     title="Адрес"
                                     iconClass="flaticon-location"
-                                    address='г. Алматы, ул. Каныша Сатпаева, 30/8, БЦ "Тенгиз Тауэрс", 3 этаж, офис 147'
+                                    address='г. Алматы, ул. Каныша Сатпаева, 30/8, БЦ "Тенгиз Тауэрс", 3 этаж, офис 148'
                                 />
                             </div>
                             <div className="col-md-4">
@@ -36,7 +36,7 @@ const ContactMain = () => {
                                     boxClass="sm-mb-30"
                                     title="Электронная почта"
                                     iconClass="flaticon-email"
-                                    email="info@rcos.kz"
+                                    email="info@rcos.com.kz"
                                 />
                             </div>
                             <div className="col-md-4">
@@ -45,8 +45,7 @@ const ContactMain = () => {
                                     title="Номер телефона"
                                     iconClass="flaticon-phone"
                                     phone={[
-                                        "+7 701 353 36 66",
-                                        "+7 705 553 30 60",
+                                        "8 700 541 03 41",
                                     ]}
                                 />
                             </div>
