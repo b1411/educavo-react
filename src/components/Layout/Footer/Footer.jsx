@@ -43,7 +43,7 @@ const Footer = (props) => {
                                         <i className="fa fa-instagram"></i>
                                     </a>
                                     <a
-                                        href="https://wa.me/77005410341"
+                                        href="https://wa.me/77013533666"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -65,6 +65,12 @@ const Footer = (props) => {
                                 <li>
                                     <i className="flaticon-call"></i>
                                     <div className="desc">
+                                        <a
+                                            class="phone"
+                                            href="tel:+77013533666"
+                                        >
+                                            +7 701 353 36 66
+                                        </a>
                                         <a
                                             class="phone"
                                             href="tel:+77005410341"

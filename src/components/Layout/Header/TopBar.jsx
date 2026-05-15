@@ -44,7 +44,7 @@ const TopHeader = (props) => {
                             )}
                             <li>
                                 <a
-                                    href="https://wa.me/77005410341"
+                                    href="https://wa.me/77013533666"
                                     target="_blank"
                                     rel="noreferrer"
                                     style={{paddingRight: "5px"}}

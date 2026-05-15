@@ -45,6 +45,7 @@ const ContactMain = () => {
                                     title="Номер телефона"
                                     iconClass="flaticon-phone"
                                     phone={[
+                                        "+7 701 353 36 66",
                                         "8 700 541 03 41",
                                     ]}
                                 />
